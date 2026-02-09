@@ -1,0 +1,16 @@
+# Clima y confort térmico
+
+## Video de la sesión
+
+{{< video https://github.com/AltamarMx/idb-2026-2.git >}}
+
+## Notas
+
+En esta sesión vimos:
+
+1. Concepto de zona térmica
+1. Sistemas constructivos
+1. Modelo dependiente del tiempo
+1. Flujo de calor unidimensional
+1. Balance de calor en superficie externa
+

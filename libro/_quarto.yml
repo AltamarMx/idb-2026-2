@@ -11,7 +11,7 @@ book:
     - part: "Sesiones"
       chapters:
         - clases/001-introduccion/index.qmd
-        - clases/002-clima-y-confort/index.qmd
+        - clases/002-conceptos-basicos-balance/index.qmd
         - clases/003-mi-primer-cubo/index.qmd
     - references.qmd
 
