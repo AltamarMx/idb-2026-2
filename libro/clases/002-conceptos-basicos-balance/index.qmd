@@ -1,8 +1,8 @@
-# Clima y confort térmico
+# Conceptos básicos y balance de calor
 
 ## Video de la sesión
 
-{{< video https://github.com/AltamarMx/idb-2026-2.git >}}
+{{< video https://youtu.be/MztEG-itNHg >}}
 
 ## Notas
 

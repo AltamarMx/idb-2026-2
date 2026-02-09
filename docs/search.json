@@ -106,5 +106,27 @@
       "Sesiones",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
     ]
+  },
+  {
+    "objectID": "clases/002-conceptos-basicos-balance/index.html",
+    "href": "clases/002-conceptos-basicos-balance/index.html",
+    "title": "2  Conceptos básicos y balance de calor",
+    "section": "",
+    "text": "2.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
+    ]
+  },
+  {
+    "objectID": "clases/002-conceptos-basicos-balance/index.html#notas",
+    "href": "clases/002-conceptos-basicos-balance/index.html#notas",
+    "title": "2  Conceptos básicos y balance de calor",
+    "section": "2.2 Notas",
+    "text": "2.2 Notas\nEn esta sesión vimos:\n\nConcepto de zona térmica\nSistemas constructivos\nModelo dependiente del tiempo\nFlujo de calor unidimensional\nBalance de calor en superficie externa",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
+    ]
   }
 ]
