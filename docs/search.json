@@ -1,0 +1,110 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Taller Introducción al Diseño Bioclimático",
+    "section": "",
+    "text": "Prefacio\nBienvenido al Taller de Introducción al Diseño Bioclimático.\nEste libro recopila las sesiones de clase del semestre 2026-2. Cada sesión incluye el video de la clase grabada y, cuando aplica, las libretas de Jupyter y archivos de proyecto utilizados.",
+    "crumbs": [
+      "Prefacio"
+    ]
+  },
+  {
+    "objectID": "index.html#cómo-navegar-este-libro",
+    "href": "index.html#cómo-navegar-este-libro",
+    "title": "Taller Introducción al Diseño Bioclimático",
+    "section": "Cómo navegar este libro",
+    "text": "Cómo navegar este libro\n\nUsa la barra lateral para ir a cualquier sesión\nCada sesión tiene el video de la clase embebido\nLas libretas y archivos de datos están disponibles para descarga cuando aplica",
+    "crumbs": [
+      "Prefacio"
+    ]
+  },
+  {
+    "objectID": "clases/001-introduccion/index.html",
+    "href": "clases/001-introduccion/index.html",
+    "title": "1  Introducción al diseño bioclimático",
+    "section": "",
+    "text": "1.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción al diseño bioclimático</span>"
+    ]
+  },
+  {
+    "objectID": "clases/001-introduccion/index.html#notas",
+    "href": "clases/001-introduccion/index.html#notas",
+    "title": "1  Introducción al diseño bioclimático",
+    "section": "1.2 Notas",
+    "text": "1.2 Notas\nEn esta sesión revisamos los conceptos fundamentales del diseño bioclimático:\n\nReglas del curso\nPresentaciones\nPor qué usaremos OpenStudio y EnergyPlus\nEcosistemas libres y de paga para simulaciones de edificaciones",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción al diseño bioclimático</span>"
+    ]
+  },
+  {
+    "objectID": "clases/002-clima-y-confort/index.html",
+    "href": "clases/002-clima-y-confort/index.html",
+    "title": "2  Clima y confort térmico",
+    "section": "",
+    "text": "2.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
+    ]
+  },
+  {
+    "objectID": "clases/002-clima-y-confort/index.html#notas",
+    "href": "clases/002-clima-y-confort/index.html#notas",
+    "title": "2  Clima y confort térmico",
+    "section": "2.2 Notas",
+    "text": "2.2 Notas\nEn esta sesión analizamos datos climáticos usando Python y pandas. Trabajamos con archivos EPW para extraer temperatura, humedad y radiación solar.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
+    ]
+  },
+  {
+    "objectID": "clases/002-clima-y-confort/index.html#materiales",
+    "href": "clases/002-clima-y-confort/index.html#materiales",
+    "title": "2  Clima y confort térmico",
+    "section": "2.3 Materiales",
+    "text": "2.3 Materiales\n\nLibreta: Análisis climático",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
+    ]
+  },
+  {
+    "objectID": "clases/003-mi-primer-cubo/index.html",
+    "href": "clases/003-mi-primer-cubo/index.html",
+    "title": "3  Mi primer cubo",
+    "section": "",
+    "text": "3.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
+    ]
+  },
+  {
+    "objectID": "clases/003-mi-primer-cubo/index.html#notas",
+    "href": "clases/003-mi-primer-cubo/index.html#notas",
+    "title": "3  Mi primer cubo",
+    "section": "3.2 Notas",
+    "text": "3.2 Notas\nEn esta sesión construimos nuestro primer modelo de simulación energética: un cubo simple. Revisamos el flujo completo desde la creación del modelo hasta el análisis de resultados.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
+    ]
+  },
+  {
+    "objectID": "clases/003-mi-primer-cubo/index.html#materiales",
+    "href": "clases/003-mi-primer-cubo/index.html#materiales",
+    "title": "3  Mi primer cubo",
+    "section": "3.3 Materiales",
+    "text": "3.3 Materiales\nEl proyecto tiene la siguiente estructura:\n\nepws/ — Archivos de clima utilizados en la simulación\nnotebook/ — Libretas con el análisis de resultados\n\n\n3.3.1 Libretas\n\nLibreta: Resultados del cubo",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
+    ]
+  }
+]
