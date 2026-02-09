@@ -14,3 +14,4 @@ libro/clases/**/osm/
 
 # Quarto
 libro/.quarto/
+**/*.quarto_ipynb

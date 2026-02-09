@@ -1,0 +1,20 @@
+# Mi primer cubo
+
+## Video de la sesión
+
+{{< video https://www.youtube.com/embed/dQw4w9WgXcQ >}}
+
+## Notas
+
+En esta sesión construimos nuestro primer modelo de simulación energética: un cubo simple. Revisamos el flujo completo desde la creación del modelo hasta el análisis de resultados.
+
+## Materiales
+
+El proyecto tiene la siguiente estructura:
+
+- `epws/` — Archivos de clima utilizados en la simulación
+- `notebook/` — Libretas con el análisis de resultados
+
+### Libretas
+
+- [Libreta: Resultados del cubo](notebook/resultados_cubo.ipynb)

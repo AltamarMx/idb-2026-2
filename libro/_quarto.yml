@@ -1,0 +1,22 @@
+project:
+  type: book
+  output-dir: ../docs
+
+book:
+  title: "Taller Introducción al Diseño Bioclimático"
+  author: "Guillermo Barrios"
+  date: "2026-2"
+  chapters:
+    - index.qmd
+    - part: "Sesiones"
+      chapters:
+        - clases/001-introduccion/index.qmd
+        - clases/002-clima-y-confort/index.qmd
+        - clases/003-mi-primer-cubo/index.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo

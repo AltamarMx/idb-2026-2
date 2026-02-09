@@ -1,0 +1,14 @@
+# Introducción al diseño bioclimático
+
+## Video de la sesión
+
+{{< video https://youtu.be/Pv8K7OCB7ms >}}
+
+## Notas
+
+En esta sesión revisamos los conceptos fundamentales del diseño bioclimático:
+
+- Reglas del curso
+- Presentaciones
+- Por qué usaremos OpenStudio y EnergyPlus
+- Ecosistemas libres y de paga para simulaciones de edificaciones

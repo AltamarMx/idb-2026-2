@@ -1,0 +1,11 @@
+# Prefacio {.unnumbered}
+
+Bienvenido al **Taller de Introducción al Diseño Bioclimático**.
+
+Este libro recopila las sesiones de clase del semestre 2026-2. Cada sesión incluye el video de la clase grabada y, cuando aplica, las libretas de Jupyter y archivos de proyecto utilizados.
+
+## Cómo navegar este libro
+
+- Usa la barra lateral para ir a cualquier sesión
+- Cada sesión tiene el video de la clase embebido
+- Las libretas y archivos de datos están disponibles para descarga cuando aplica
