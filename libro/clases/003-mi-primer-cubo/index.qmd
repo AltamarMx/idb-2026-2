@@ -2,19 +2,9 @@
 
 ## Video de la sesión
 
-{{< video https://www.youtube.com/embed/dQw4w9WgXcQ >}}
+{{< video youtube.com/watch?v=SLe-T1V0CxA&feature=youtu.be >}}
 
 ## Notas
 
-En esta sesión construimos nuestro primer modelo de simulación energética: un cubo simple. Revisamos el flujo completo desde la creación del modelo hasta el análisis de resultados.
+En esta sesión construimos nuestro primer modelo de simulación energética: Dos zonas térmicas con condición de fronteras adecuadas.
 
-## Materiales
-
-El proyecto tiene la siguiente estructura:
-
-- `epws/` — Archivos de clima utilizados en la simulación
-- `notebook/` — Libretas con el análisis de resultados
-
-### Libretas
-
-- [Libreta: Resultados del cubo](notebook/resultados_cubo.ipynb)
