@@ -2,7 +2,7 @@
 
 ## Video de la sesión
 
-{{< video youtube.com/watch?v=SLe-T1V0CxA&feature=youtu.be >}}
+{{< video https://youtube.com/watch?v=SLe-T1V0CxA&feature=youtu.be >}}
 
 ## Notas
 

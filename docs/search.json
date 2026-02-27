@@ -90,7 +90,7 @@
     "href": "clases/003-mi-primer-cubo/index.html#notas",
     "title": "3  Mi primer cubo",
     "section": "3.2 Notas",
-    "text": "3.2 Notas\nEn esta sesión construimos nuestro primer modelo de simulación energética: un cubo simple. Revisamos el flujo completo desde la creación del modelo hasta el análisis de resultados.",
+    "text": "3.2 Notas\nEn esta sesión construimos nuestro primer modelo de simulación energética: Dos zonas térmicas con condición de fronteras adecuadas.",
     "crumbs": [
       "Sesiones",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
