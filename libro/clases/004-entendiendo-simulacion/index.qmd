@@ -1,0 +1,13 @@
+# Entendiendo una simulación
+
+## Video de la sesión
+
+{{< video https://youtu.be/E7CZ6mmmM1Q >}}
+
+## Notas
+
+En esta sesión entendemos el proceso de hacer una simulación para OpenStudio, el warming up, y qué es y como armar un construction set.
+
+También se repasan algunas condiciones de frontera.
+
+Recuerda revisar el archivo eplusout.err para ver los warnings y errores.

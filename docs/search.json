@@ -42,36 +42,25 @@
     ]
   },
   {
-    "objectID": "clases/002-clima-y-confort/index.html",
-    "href": "clases/002-clima-y-confort/index.html",
-    "title": "2  Clima y confort térmico",
+    "objectID": "clases/002-conceptos-basicos-balance/index.html",
+    "href": "clases/002-conceptos-basicos-balance/index.html",
+    "title": "2  Conceptos básicos y balance de calor",
     "section": "",
     "text": "2.1 Video de la sesión",
     "crumbs": [
       "Sesiones",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
     ]
   },
   {
-    "objectID": "clases/002-clima-y-confort/index.html#notas",
-    "href": "clases/002-clima-y-confort/index.html#notas",
-    "title": "2  Clima y confort térmico",
+    "objectID": "clases/002-conceptos-basicos-balance/index.html#notas",
+    "href": "clases/002-conceptos-basicos-balance/index.html#notas",
+    "title": "2  Conceptos básicos y balance de calor",
     "section": "2.2 Notas",
-    "text": "2.2 Notas\nEn esta sesión analizamos datos climáticos usando Python y pandas. Trabajamos con archivos EPW para extraer temperatura, humedad y radiación solar.",
+    "text": "2.2 Notas\nEn esta sesión vimos:\n\nConcepto de zona térmica\nSistemas constructivos\nModelo dependiente del tiempo\nFlujo de calor unidimensional\nBalance de calor en superficie externa",
     "crumbs": [
       "Sesiones",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
-    ]
-  },
-  {
-    "objectID": "clases/002-clima-y-confort/index.html#materiales",
-    "href": "clases/002-clima-y-confort/index.html#materiales",
-    "title": "2  Clima y confort térmico",
-    "section": "2.3 Materiales",
-    "text": "2.3 Materiales\n\nLibreta: Análisis climático",
-    "crumbs": [
-      "Sesiones",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Clima y confort térmico</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
     ]
   },
   {
@@ -97,36 +86,25 @@
     ]
   },
   {
-    "objectID": "clases/003-mi-primer-cubo/index.html#materiales",
-    "href": "clases/003-mi-primer-cubo/index.html#materiales",
-    "title": "3  Mi primer cubo",
-    "section": "3.3 Materiales",
-    "text": "3.3 Materiales\nEl proyecto tiene la siguiente estructura:\n\nepws/ — Archivos de clima utilizados en la simulación\nnotebook/ — Libretas con el análisis de resultados\n\n\n3.3.1 Libretas\n\nLibreta: Resultados del cubo",
-    "crumbs": [
-      "Sesiones",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Mi primer cubo</span>"
-    ]
-  },
-  {
-    "objectID": "clases/002-conceptos-basicos-balance/index.html",
-    "href": "clases/002-conceptos-basicos-balance/index.html",
-    "title": "2  Conceptos básicos y balance de calor",
+    "objectID": "clases/004-entendiendo-simulacion/index.html",
+    "href": "clases/004-entendiendo-simulacion/index.html",
+    "title": "4  Entendiendo una simulación",
     "section": "",
-    "text": "2.1 Video de la sesión",
+    "text": "4.1 Video de la sesión",
     "crumbs": [
       "Sesiones",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Entendiendo una simulación</span>"
     ]
   },
   {
-    "objectID": "clases/002-conceptos-basicos-balance/index.html#notas",
-    "href": "clases/002-conceptos-basicos-balance/index.html#notas",
-    "title": "2  Conceptos básicos y balance de calor",
-    "section": "2.2 Notas",
-    "text": "2.2 Notas\nEn esta sesión vimos:\n\nConcepto de zona térmica\nSistemas constructivos\nModelo dependiente del tiempo\nFlujo de calor unidimensional\nBalance de calor en superficie externa",
+    "objectID": "clases/004-entendiendo-simulacion/index.html#notas",
+    "href": "clases/004-entendiendo-simulacion/index.html#notas",
+    "title": "4  Entendiendo una simulación",
+    "section": "4.2 Notas",
+    "text": "4.2 Notas\nEn esta sesión entendemos el proceso de hacer una simulación para OpenStudio, el warming up, y qué es y como armar un construction set.\nTambién se repasan algunas condiciones de frontera.\nRecuerda revisar el archivo eplusout.err para ver los warnings y errores.",
     "crumbs": [
       "Sesiones",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceptos básicos y balance de calor</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Entendiendo una simulación</span>"
     ]
   }
 ]

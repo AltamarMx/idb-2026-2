@@ -13,6 +13,7 @@ book:
         - clases/001-introduccion/index.qmd
         - clases/002-conceptos-basicos-balance/index.qmd
         - clases/003-mi-primer-cubo/index.qmd
+        - clases/004-entendiendo-simulacion/index.qmd
     - references.qmd
 
 bibliography: references.bib
