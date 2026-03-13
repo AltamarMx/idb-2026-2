@@ -106,5 +106,49 @@
       "Sesiones",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Entendiendo una simulación</span>"
     ]
+  },
+  {
+    "objectID": "clases/005-obteniendo-datos-python/index.html",
+    "href": "clases/005-obteniendo-datos-python/index.html",
+    "title": "5  Analizando datos de una simulación",
+    "section": "",
+    "text": "5.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Analizando datos de una simulación</span>"
+    ]
+  },
+  {
+    "objectID": "clases/005-obteniendo-datos-python/index.html#notas",
+    "href": "clases/005-obteniendo-datos-python/index.html#notas",
+    "title": "5  Analizando datos de una simulación",
+    "section": "5.2 Notas",
+    "text": "5.2 Notas\nSe plantea como usar miniconda, uv y ambientes virtuales junto con el paquete iertools para manejo de datos con Python.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Analizando datos de una simulación</span>"
+    ]
+  },
+  {
+    "objectID": "clases/005-obteniendo-datos-python/001_EDA.html",
+    "href": "clases/005-obteniendo-datos-python/001_EDA.html",
+    "title": "6  Usando read_sql de iertools para cargar datos",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom iertools.read import read_sql \nfrom dateutil.parser import parse\n\n\nf = \"../Osm/Mi_primer_cubo_002/run/eplusout.sql\"\ncubo = read_sql(f,alias=True)\n# cubo.construction_systems\ndata_cubo = cubo.data\ndata_cubo\n\n\n\n\n\n\n\nvariable_name\nTi_CUBO\nId\nIb\nTo\nTECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)\n\n\ndate\n\n\n\n\n\n\n\n\n\n2006-01-01 00:10:00\n24.536431\n0.0\n0.0\n13.766667\n0.0\n\n\n2006-01-01 00:20:00\n24.302943\n0.0\n0.0\n13.933333\n0.0\n\n\n2006-01-01 00:30:00\n24.073180\n0.0\n0.0\n14.100000\n0.0\n\n\n2006-01-01 00:40:00\n23.846635\n0.0\n0.0\n14.266667\n0.0\n\n\n2006-01-01 00:50:00\n23.624291\n0.0\n0.0\n14.433333\n0.0\n\n\n...\n...\n...\n...\n...\n...\n\n\n2006-12-31 23:20:00\n27.857083\n0.0\n0.0\n16.666667\n0.0\n\n\n2006-12-31 23:30:00\n27.616217\n0.0\n0.0\n16.550000\n0.0\n\n\n2006-12-31 23:40:00\n27.377977\n0.0\n0.0\n16.433333\n0.0\n\n\n2006-12-31 23:50:00\n27.142483\n0.0\n0.0\n16.316667\n0.0\n\n\n2007-01-01 00:00:00\n26.910401\n0.0\n0.0\n16.200000\n0.0\n\n\n\n\n52560 rows × 5 columns\n\n\n\n\nsc = cubo.construction_systems\ncubo.get_construction(sc)\n\n\nConstruction system:CDA15CMA0P7\n\nTotal thickness    :0.15 m\n\nTotal layers:[1]\n\nInsideAbsorpVis:[0.7]\n\nOutsideAbsorpVis:[0.7]\n\nOutsideAbsorpSolar:[0.7]\n\nInsideAbsorpThermal:[0.9]\n\nOutsideRoughness:[2]\n\n\n\n\n\n\n\n\n\n\n\nNameMaterial\nConductivity\nDensity\nSpecHeat\nThickness\n\n\n\n\n0\nCDA15cma0p7\n2.0\n2500.0\n1400.0\n0.15\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConstruction system:LADRILLO14CMA0P7\n\nTotal thickness    :0.14 m\n\nTotal layers:[1]\n\nInsideAbsorpVis:[0.7]\n\nOutsideAbsorpVis:[0.7]\n\nOutsideAbsorpSolar:[0.7]\n\nInsideAbsorpThermal:[0.9]\n\nOutsideRoughness:[2]\n\n\n\n\n\n\n\n\n\n\n\nNameMaterial\nConductivity\nDensity\nSpecHeat\nThickness\n\n\n\n\n1\nLadrillo14cma0p7\n1.4\n1400.0\n1000.0\n0.14\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(2,1,figsize=(12,4),sharex=True)\n\nf1 = parse(\"2006-03-13\")\nf2 = f1 + pd.Timedelta(\"7D3h50min\")\n\nax[0].plot(data_cubo.Ti_CUBO,label=\"Ti\")\nax[0].plot(data_cubo.To,label=\"To\")\n\nax[1].plot(data_cubo.Id,label=\"Id\") \nax[1].plot(data_cubo.Ib,label=\"Ib\") \nax[1].plot(data_cubo[\"TECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)\"],label=\"Ig\") \n\nax[0].legend()\nax[1].legend()\n\nax[1].set_xlim(f1,f2)",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Usando read_sql de iertools para cargar datos</span>"
+    ]
+  },
+  {
+    "objectID": "clases/005-obteniendo-datos-python/002_EDA_EPW.html",
+    "href": "clases/005-obteniendo-datos-python/002_EDA_EPW.html",
+    "title": "7  Usando read_epw para leer EPWs",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom iertools.read import read_epw\n\n\nf = \"../EPW/MEX_MOR_Cuernavaca-Matamoros.Intl.AP.767260_TMYx.2009-2023.epw\"\ncue = read_epw(f,alias=True)\ncue = cue[~((cue.index.month == 2) & (cue.index.day == 29))]\ncue.index = cue.index.map(lambda x: x.replace(year=2023))\ncue\n\n\n\n\n\n\n\n\nData Source and Uncertainty Flags\nTo\nDew Point Temperature\nRH\nP\nExtraterrestrial Horizontal Radiation\nExtraterrestrial Direct Normal Radiation\nHorizontal Infrared Radiation Intensity\nIg\nIb\n...\nCeiling Height\nPresent Weather Observation\nPresent Weather Codes\nPrecipitable Water\nAerosol Optical Depth\nSnow Depth\nDays Since Last Snowfall\nAlbedo\nLiquid Precipitation Depth\nLiquid Precipitation Quantity\n\n\ntiempo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2023-01-01 01:00:00\n?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9\n14.6\n5.6\n55\n86614\n0\n0\n303\n0\n0\n...\n2007\n9\n999999999\n15\n0.085\n0\n88\n0.14\n0.0\n0.0\n\n\n2023-01-01 02:00:00\n?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9\n14.3\n5.4\n55\n86614\n0\n0\n304\n0\n0\n...\n1796\n9\n999999999\n15\n0.085\n0\n88\n0.14\n0.0\n0.0\n\n\n2023-01-01 03:00:00\n?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9\n14.0\n6.6\n61\n86614\n0\n0\n311\n0\n0\n...\n1635\n9\n999999999\n17\n0.085\n0\n88\n0.14\n0.0\n0.0\n\n\n2023-01-01 04:00:00\n?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9\n12.7\n4.6\n58\n86614\n0\n0\n316\n0\n0\n...\n1500\n9\n999999999\n14\n0.085\n0\n88\n0.14\n0.0\n0.0\n\n\n2023-01-01 05:00:00\n?9?9?9?9E0?9?9?9*9*9?9?9?9?9?9?9*9?9*9*9?9*9\n12.1\n6.0\n48\n87096\n0\n0\n307\n0\n0\n...\n1467\n9\n999999999\n16\n0.085\n0\n88\n0.14\n0.0\n0.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n2023-12-31 20:00:00\n?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9\n21.3\n9.5\n47\n87531\n0\n0\n325\n0\n0\n...\n2691\n9\n999999999\n22\n0.085\n0\n88\n0.13\n0.0\n0.0\n\n\n2023-12-31 21:00:00\n?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9\n19.3\n9.2\n52\n87531\n0\n0\n320\n0\n0\n...\n2618\n9\n999999999\n22\n0.085\n0\n88\n0.13\n0.0\n0.0\n\n\n2023-12-31 22:00:00\n?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9\n19.1\n10.1\n56\n87531\n0\n0\n316\n0\n0\n...\n2617\n9\n999999999\n24\n0.085\n0\n88\n0.13\n0.0\n0.0\n\n\n2023-12-31 23:00:00\n?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9\n16.9\n9.8\n63\n87531\n0\n0\n315\n0\n0\n...\n77777\n9\n999999999\n23\n0.085\n0\n88\n0.13\n0.0\n0.0\n\n\n2023-01-01 00:00:00\n?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9\n16.2\n10.1\n67\n87531\n0\n0\n312\n0\n0\n...\n77777\n9\n999999999\n24\n0.085\n0\n88\n0.13\n0.0\n0.0\n\n\n\n\n8759 rows × 30 columns\n\n\n\n\ncue.plot(subplots=True,figsize=(12,20))\n\narray([&lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,\n       &lt;Axes: xlabel='tiempo'&gt;], dtype=object)\n\n\n\n\n\n\n\n\n\n\ncue.To.resample(\"ME\").mean()\n\ntiempo\n2023-01-31    19.201210\n2023-02-28    20.632440\n2023-03-31    23.272275\n2023-04-30    25.076806\n2023-05-31    24.850538\n2023-06-30    23.084444\n2023-07-31    22.239113\n2023-08-31    22.016263\n2023-09-30    21.021528\n2023-10-31    21.531720\n2023-11-30    20.194444\n2023-12-31    18.805511\nFreq: ME, Name: To, dtype: float64",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Usando read_epw para leer EPWs</span>"
+    ]
   }
 ]

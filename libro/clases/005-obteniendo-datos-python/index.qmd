@@ -1,0 +1,9 @@
+# Analizando datos de una simulación
+
+## Video de la sesión
+
+{{< video https://www.youtube.com/watch?v=YeUkbruWgPk >}}
+
+## Notas
+
+Se plantea como usar miniconda, uv y ambientes virtuales junto con el paquete [iertools](https://github.com/AltamarMx/iertools) para manejo de datos con Python.

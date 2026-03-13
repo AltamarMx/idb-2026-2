@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Entendiendo una simulación – Taller Introducción al Diseño Bioclimático</title>
+<title>7&nbsp; Usando read_epw para leer EPWs – Taller Introducción al Diseño Bioclimático</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../clases/005-obteniendo-datos-python/index.html" rel="next">
-<link href="../../clases/003-mi-primer-cubo/index.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../clases/005-obteniendo-datos-python/001_EDA.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,6 +105,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -83,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/004-entendiendo-simulacion/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entendiendo una simulación</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../clases/004-entendiendo-simulacion/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../clases/004-entendiendo-simulacion/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entendiendo una simulación</span></span></a>
   </div>
 </li>
@@ -163,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" class="sidebar-item-text sidebar-link">
+  <a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></span></a>
   </div>
 </li>
@@ -180,22 +218,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#video-de-la-sesión" id="toc-video-de-la-sesión" class="nav-link active" data-scroll-target="#video-de-la-sesión"><span class="header-section-number">4.1</span> Video de la sesión</a></li>
-  <li><a href="#notas" id="toc-notas" class="nav-link" data-scroll-target="#notas"><span class="header-section-number">4.2</span> Notas</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/004-entendiendo-simulacion/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entendiendo una simulación</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entendiendo una simulación</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></h1>
 </div>
 
 
@@ -212,18 +243,392 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="video-de-la-sesión" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="video-de-la-sesión"><span class="header-section-number">4.1</span> Video de la sesión</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/E7CZ6mmmM1Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="notas" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="notas"><span class="header-section-number">4.2</span> Notas</h2>
-<p>En esta sesión entendemos el proceso de hacer una simulación para OpenStudio, el warming up, y qué es y como armar un construction set.</p>
-<p>También se repasan algunas condiciones de frontera.</p>
-<p>Recuerda revisar el archivo eplusout.err para ver los warnings y errores.</p>
+<div id="076c06f3-eb59-46ca-a05f-878b4d2d90cd" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> iertools.read <span class="im">import</span> read_epw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="62358e58-ddf8-4bfc-8dd5-44691ca470a1" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">"../EPW/MEX_MOR_Cuernavaca-Matamoros.Intl.AP.767260_TMYx.2009-2023.epw"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cue <span class="op">=</span> read_epw(f,alias<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cue <span class="op">=</span> cue[<span class="op">~</span>((cue.index.month <span class="op">==</span> <span class="dv">2</span>) <span class="op">&amp;</span> (cue.index.day <span class="op">==</span> <span class="dv">29</span>))]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cue.index <span class="op">=</span> cue.index.<span class="bu">map</span>(<span class="kw">lambda</span> x: x.replace(year<span class="op">=</span><span class="dv">2023</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>cue</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
 
 
-</section>
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Data Source and Uncertainty Flags</th>
+<th data-quarto-table-cell-role="th">To</th>
+<th data-quarto-table-cell-role="th">Dew Point Temperature</th>
+<th data-quarto-table-cell-role="th">RH</th>
+<th data-quarto-table-cell-role="th">P</th>
+<th data-quarto-table-cell-role="th">Extraterrestrial Horizontal Radiation</th>
+<th data-quarto-table-cell-role="th">Extraterrestrial Direct Normal Radiation</th>
+<th data-quarto-table-cell-role="th">Horizontal Infrared Radiation Intensity</th>
+<th data-quarto-table-cell-role="th">Ig</th>
+<th data-quarto-table-cell-role="th">Ib</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Ceiling Height</th>
+<th data-quarto-table-cell-role="th">Present Weather Observation</th>
+<th data-quarto-table-cell-role="th">Present Weather Codes</th>
+<th data-quarto-table-cell-role="th">Precipitable Water</th>
+<th data-quarto-table-cell-role="th">Aerosol Optical Depth</th>
+<th data-quarto-table-cell-role="th">Snow Depth</th>
+<th data-quarto-table-cell-role="th">Days Since Last Snowfall</th>
+<th data-quarto-table-cell-role="th">Albedo</th>
+<th data-quarto-table-cell-role="th">Liquid Precipitation Depth</th>
+<th data-quarto-table-cell-role="th">Liquid Precipitation Quantity</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">tiempo</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-01-01 01:00:00</th>
+<td>?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>14.6</td>
+<td>5.6</td>
+<td>55</td>
+<td>86614</td>
+<td>0</td>
+<td>0</td>
+<td>303</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>2007</td>
+<td>9</td>
+<td>999999999</td>
+<td>15</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.14</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2023-01-01 02:00:00</th>
+<td>?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>14.3</td>
+<td>5.4</td>
+<td>55</td>
+<td>86614</td>
+<td>0</td>
+<td>0</td>
+<td>304</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1796</td>
+<td>9</td>
+<td>999999999</td>
+<td>15</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.14</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-01-01 03:00:00</th>
+<td>?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>14.0</td>
+<td>6.6</td>
+<td>61</td>
+<td>86614</td>
+<td>0</td>
+<td>0</td>
+<td>311</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1635</td>
+<td>9</td>
+<td>999999999</td>
+<td>17</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.14</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2023-01-01 04:00:00</th>
+<td>?9?9?9?9E0?9?9?9*9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>12.7</td>
+<td>4.6</td>
+<td>58</td>
+<td>86614</td>
+<td>0</td>
+<td>0</td>
+<td>316</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1500</td>
+<td>9</td>
+<td>999999999</td>
+<td>14</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.14</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-01-01 05:00:00</th>
+<td>?9?9?9?9E0?9?9?9*9*9?9?9?9?9?9?9*9?9*9*9?9*9</td>
+<td>12.1</td>
+<td>6.0</td>
+<td>48</td>
+<td>87096</td>
+<td>0</td>
+<td>0</td>
+<td>307</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1467</td>
+<td>9</td>
+<td>999999999</td>
+<td>16</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.14</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-12-31 20:00:00</th>
+<td>?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>21.3</td>
+<td>9.5</td>
+<td>47</td>
+<td>87531</td>
+<td>0</td>
+<td>0</td>
+<td>325</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>2691</td>
+<td>9</td>
+<td>999999999</td>
+<td>22</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2023-12-31 21:00:00</th>
+<td>?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>19.3</td>
+<td>9.2</td>
+<td>52</td>
+<td>87531</td>
+<td>0</td>
+<td>0</td>
+<td>320</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>2618</td>
+<td>9</td>
+<td>999999999</td>
+<td>22</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-12-31 22:00:00</th>
+<td>?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>19.1</td>
+<td>10.1</td>
+<td>56</td>
+<td>87531</td>
+<td>0</td>
+<td>0</td>
+<td>316</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>2617</td>
+<td>9</td>
+<td>999999999</td>
+<td>24</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2023-12-31 23:00:00</th>
+<td>?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>16.9</td>
+<td>9.8</td>
+<td>63</td>
+<td>87531</td>
+<td>0</td>
+<td>0</td>
+<td>315</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>77777</td>
+<td>9</td>
+<td>999999999</td>
+<td>23</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2023-01-01 00:00:00</th>
+<td>?9?9?9?9E0?9?9?9?9*9?9?9?9*9?9?9*9?9*9*9?9*9</td>
+<td>16.2</td>
+<td>10.1</td>
+<td>67</td>
+<td>87531</td>
+<td>0</td>
+<td>0</td>
+<td>312</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>77777</td>
+<td>9</td>
+<td>999999999</td>
+<td>24</td>
+<td>0.085</td>
+<td>0</td>
+<td>88</td>
+<td>0.13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>8759 rows × 30 columns</p>
+</div>
+</div>
+</div>
+<div id="87a09a54-d301-43fd-895b-37b2e93fc7e1" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cue.plot(subplots<span class="op">=</span><span class="va">True</span>,figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>array([&lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;, &lt;Axes: xlabel='tiempo'&gt;,
+       &lt;Axes: xlabel='tiempo'&gt;], dtype=object)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="002_EDA_EPW_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="a898e3f1-ad16-4a98-bc1f-8409bb2e32e1" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cue.To.resample(<span class="st">"ME"</span>).mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>tiempo
+2023-01-31    19.201210
+2023-02-28    20.632440
+2023-03-31    23.272275
+2023-04-30    25.076806
+2023-05-31    24.850538
+2023-06-30    23.084444
+2023-07-31    22.239113
+2023-08-31    22.016263
+2023-09-30    21.021528
+2023-10-31    21.531720
+2023-11-30    20.194444
+2023-12-31    18.805511
+Freq: ME, Name: To, dtype: float64</code></pre>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -628,13 +1033,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../clases/003-mi-primer-cubo/index.html" class="pagination-link" aria-label="Mi primer cubo">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mi primer cubo</span></span>
+      <a href="../../clases/005-obteniendo-datos-python/001_EDA.html" class="pagination-link" aria-label="Usando read_sql de iertools para cargar datos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../clases/005-obteniendo-datos-python/index.html" class="pagination-link" aria-label="Analizando datos de una simulación">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analizando datos de una simulación</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
