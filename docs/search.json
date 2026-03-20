@@ -150,5 +150,27 @@
       "Sesiones",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Usando read_epw para leer EPWs</span>"
     ]
+  },
+  {
+    "objectID": "clases/006_2Zonas_VentanasProtecciones/index.html",
+    "href": "clases/006_2Zonas_VentanasProtecciones/index.html",
+    "title": "8  Simulación con dos zonas térmicas, ventanas y protecciones",
+    "section": "",
+    "text": "8.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Simulación con dos zonas térmicas, ventanas y protecciones</span>"
+    ]
+  },
+  {
+    "objectID": "clases/006_2Zonas_VentanasProtecciones/index.html#notas",
+    "href": "clases/006_2Zonas_VentanasProtecciones/index.html#notas",
+    "title": "8  Simulación con dos zonas térmicas, ventanas y protecciones",
+    "section": "8.2 Notas",
+    "text": "8.2 Notas\nSe hace una simulación de dos zonas térmicas con condición de frontera de interzona, se colocan ventanas y protecciones solares.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Simulación con dos zonas térmicas, ventanas y protecciones</span>"
+    ]
   }
 ]

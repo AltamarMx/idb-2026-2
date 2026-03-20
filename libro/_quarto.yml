@@ -17,6 +17,7 @@ book:
         - clases/005-obteniendo-datos-python/index.qmd
         - clases/005-obteniendo-datos-python/001_EDA.ipynb 
         - clases/005-obteniendo-datos-python/002_EDA_EPW.ipynb 
+        - clases/006_2Zonas_VentanasProtecciones/index.qmd
     - references.qmd
 
 bibliography: references.bib

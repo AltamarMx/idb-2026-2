@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Clima y confort térmico – Taller Introducción al Diseño Bioclimático</title>
+<title>8&nbsp; Simulación con dos zonas térmicas, ventanas y protecciones – Taller Introducción al Diseño Bioclimático</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../clases/003-mi-primer-cubo/index.html" rel="next">
-<link href="../../clases/001-introduccion/index.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/002-clima-y-confort/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Clima y confort térmico</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/006_2Zonas_VentanasProtecciones/index.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulación con dos zonas térmicas, ventanas y protecciones</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,9 +96,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Taller Introducción al Diseño Bioclimático</a> 
     </div>
@@ -133,14 +131,44 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../clases/002-clima-y-confort/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Clima y confort térmico</span></span></a>
+  <a href="../../clases/002-conceptos-basicos-balance/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos básicos y balance de calor</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../clases/003-mi-primer-cubo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mi primer cubo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../clases/004-entendiendo-simulacion/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entendiendo una simulación</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../clases/005-obteniendo-datos-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analizando datos de una simulación</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../clases/005-obteniendo-datos-python/001_EDA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../clases/006_2Zonas_VentanasProtecciones/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulación con dos zonas térmicas, ventanas y protecciones</span></span></a>
   </div>
 </li>
       </ul>
@@ -161,18 +189,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#video-de-la-sesión" id="toc-video-de-la-sesión" class="nav-link active" data-scroll-target="#video-de-la-sesión"><span class="header-section-number">2.1</span> Video de la sesión</a></li>
-  <li><a href="#notas" id="toc-notas" class="nav-link" data-scroll-target="#notas"><span class="header-section-number">2.2</span> Notas</a></li>
-  <li><a href="#materiales" id="toc-materiales" class="nav-link" data-scroll-target="#materiales"><span class="header-section-number">2.3</span> Materiales</a></li>
+  <li><a href="#video-de-la-sesión" id="toc-video-de-la-sesión" class="nav-link active" data-scroll-target="#video-de-la-sesión"><span class="header-section-number">8.1</span> Video de la sesión</a></li>
+  <li><a href="#notas" id="toc-notas" class="nav-link" data-scroll-target="#notas"><span class="header-section-number">8.2</span> Notas</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/002-clima-y-confort/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Clima y confort térmico</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/006_2Zonas_VentanasProtecciones/index.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulación con dos zonas térmicas, ventanas y protecciones</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Clima y confort térmico</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulación con dos zonas térmicas, ventanas y protecciones</span></h1>
 </div>
 
 
@@ -189,19 +216,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="video-de-la-sesión" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="video-de-la-sesión"><span class="header-section-number">2.1</span> Video de la sesión</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="video-de-la-sesión" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="video-de-la-sesión"><span class="header-section-number">8.1</span> Video de la sesión</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/rFEvljkRlD4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="notas" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="notas"><span class="header-section-number">2.2</span> Notas</h2>
-<p>En esta sesión analizamos datos climáticos usando Python y pandas. Trabajamos con archivos EPW para extraer temperatura, humedad y radiación solar.</p>
-</section>
-<section id="materiales" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="materiales"><span class="header-section-number">2.3</span> Materiales</h2>
-<ul>
-<li><a href="analisis_clima.ipynb">Libreta: Análisis climático</a></li>
-</ul>
+<section id="notas" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="notas"><span class="header-section-number">8.2</span> Notas</h2>
+<p>Se hace una simulación de dos zonas térmicas con condición de frontera de interzona, se colocan ventanas y protecciones solares.</p>
 
 
 </section>
@@ -609,13 +630,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../clases/001-introduccion/index.html" class="pagination-link" aria-label="Introducción al diseño bioclimático">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción al diseño bioclimático</span></span>
+      <a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" class="pagination-link" aria-label="Usando read_epw para leer EPWs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../clases/003-mi-primer-cubo/index.html" class="pagination-link" aria-label="Mi primer cubo">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mi primer cubo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
