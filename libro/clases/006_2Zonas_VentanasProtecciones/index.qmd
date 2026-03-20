@@ -1,0 +1,10 @@
+# Simulación con dos zonas térmicas, ventanas y protecciones
+
+
+## Video de la sesión
+
+{{< video https://www.youtube.com/watch?v=rFEvljkRlD4 >}}
+
+## Notas
+
+Se hace una simulación de dos zonas térmicas con condición de frontera de interzona, se colocan ventanas y protecciones solares.
