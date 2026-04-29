@@ -1,0 +1,10 @@
+# Análisis de sombreamiento en ventanas
+
+
+## Video de la sesión
+
+{{< video https://youtu.be/UHJ2OUgrIpQ >}}
+
+## Notas
+
+EnerHabitat, paquete de python en PyPi

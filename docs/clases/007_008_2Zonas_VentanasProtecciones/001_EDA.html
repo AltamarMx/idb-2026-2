@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Usando read_sql de iertools para cargar datos – Taller Introducción al Diseño Bioclimático</title>
+<title>eda – Taller Introducción al Diseño Bioclimático</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,8 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" rel="next">
-<link href="../../clases/005-obteniendo-datos-python/index.html" rel="prev">
+<link href="../../clases/007_008_2Zonas_VentanasProtecciones/002_Comparacion_ConSinVentanas.html" rel="next">
+<link href="../../clases/007_008_2Zonas_VentanasProtecciones/index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/005-obteniendo-datos-python/001_EDA.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">001_EDA.html</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../clases/005-obteniendo-datos-python/001_EDA.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../clases/005-obteniendo-datos-python/001_EDA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></span></a>
   </div>
 </li>
@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html" class="sidebar-item-text sidebar-link">
+  <a href="../../clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">001_EDA.html</span></span></a>
   </div>
 </li>
@@ -272,44 +272,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/005-obteniendo-datos-python/001_EDA.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Usando read_sql de iertools para cargar datos</span></h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../clases/001-introduccion/index.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../../clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">001_EDA.html</span></a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div id="6dfaf3b1-2d38-458c-9af0-235d81be421e" class="cell" data-execution_count="1">
+<div id="c495c4f8-034e-4ebc-bdea-37fe58a11840" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> iertools.read <span class="im">import</span> read_sql </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> iertools.read <span class="im">import</span> read_sql</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dateutil.parser <span class="im">import</span> parse</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="51eeea42-8ba0-4474-af44-68e41bc7e2d0" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">"../Osm/Mi_primer_cubo_002/run/eplusout.sql"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cubo <span class="op">=</span> read_sql(f,alias<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cubo.construction_systems</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_cubo <span class="op">=</span> cubo.data</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data_cubo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div id="6356f200-c510-4564-bb33-c03b1105cca5" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">"../osm/005_CBs/run/eplusout.sql"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dosz <span class="op">=</span> read_sql(f,alias<span class="op">=</span><span class="va">True</span>).data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="1008af5c-2386-473d-a53a-c1ee6a1dd5cc" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> dosz.To.resample(<span class="st">"D"</span>).mean().idxmax()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="4bbf2cf0-bf04-44c0-a53b-2d55abd30cfb" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> f1</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> f1 <span class="op">+</span> pd.Timedelta(<span class="st">"7D"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax.plot(dosz.Ti_ESTE,label<span class="op">=</span><span class="st">"Ti_este"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.plot(dosz.Ti_OESTE,label<span class="op">=</span><span class="st">"Ti_oeste"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>ax.plot(dosz.To,label<span class="op">=</span><span class="st">"To"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(f1,f2)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.legend()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="001_EDA_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="9bce6a17-6c9f-4c11-98c2-40a7f380be8c" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dosz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -317,14 +321,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">variable_name</th>
-<th data-quarto-table-cell-role="th">Ti_CUBO</th>
-<th data-quarto-table-cell-role="th">Id</th>
-<th data-quarto-table-cell-role="th">Ib</th>
+<th data-quarto-table-cell-role="th">ESTE:Zone Air Relative Humidity (%)</th>
+<th data-quarto-table-cell-role="th">ESTE:Zone Air Temperature (C)</th>
+<th data-quarto-table-cell-role="th">Ti_ESTE</th>
 <th data-quarto-table-cell-role="th">To</th>
+<th data-quarto-table-cell-role="th">OESTE:Zone Air Relative Humidity (%)</th>
+<th data-quarto-table-cell-role="th">OESTE:Zone Air Temperature (C)</th>
+<th data-quarto-table-cell-role="th">Ti_OESTE</th>
 <th data-quarto-table-cell-role="th">TECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)</th>
+<th data-quarto-table-cell-role="th">VNORTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)</th>
+<th data-quarto-table-cell-role="th">VOESTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)</th>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -335,42 +349,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2006-01-01 00:10:00</th>
-<td>24.536431</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>24.692687</td>
+<td>17.566667</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.746551</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>13.766667</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">2006-01-01 00:20:00</th>
-<td>24.302943</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>24.587666</td>
+<td>17.733333</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.609811</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>13.933333</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2006-01-01 00:30:00</th>
-<td>24.073180</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>24.484601</td>
+<td>17.900000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.474863</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>14.100000</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">2006-01-01 00:40:00</th>
-<td>23.846635</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>24.383016</td>
+<td>18.066667</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.341520</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>14.266667</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2006-01-01 00:50:00</th>
-<td>23.624291</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>24.282393</td>
+<td>18.233333</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>25.209956</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>14.433333</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
@@ -380,194 +419,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>...</td>
 <td>...</td>
 <td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2006-12-31 23:20:00</th>
-<td>27.857083</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>26.946094</td>
+<td>19.833333</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>28.404442</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>16.666667</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">2006-12-31 23:30:00</th>
-<td>27.616217</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>26.834170</td>
+<td>19.500000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>28.259459</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>16.550000</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2006-12-31 23:40:00</th>
-<td>27.377977</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>26.724276</td>
+<td>19.166667</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>28.116413</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>16.433333</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">2006-12-31 23:50:00</th>
-<td>27.142483</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>26.614856</td>
+<td>18.833333</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>27.973797</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>16.316667</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2007-01-01 00:00:00</th>
-<td>26.910401</td>
+<td>28.997502</td>
+<td>26.7813</td>
+<td>26.505635</td>
+<td>20.036912</td>
+<td>26.70505</td>
+<td>28.189845</td>
+<td>27.831245</td>
 <td>0.0</td>
 <td>0.0</td>
-<td>16.200000</td>
 <td>0.0</td>
 </tr>
 </tbody>
 </table>
 
-<p>52560 rows × 5 columns</p>
-</div>
-</div>
-</div>
-<div id="469ca811-58b4-4c74-b6a4-187d4eaab32a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sc <span class="op">=</span> cubo.construction_systems</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cubo.get_construction(sc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre>
-Construction system:<span class="ansi-bold">CDA15CMA0P7</span>
-
-Total thickness    :0.15 m
-
-Total layers:[1]
-
-InsideAbsorpVis:[0.7]
-
-OutsideAbsorpVis:[0.7]
-
-OutsideAbsorpSolar:[0.7]
-
-InsideAbsorpThermal:[0.9]
-
-OutsideRoughness:[2]
-</pre>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">NameMaterial</th>
-<th data-quarto-table-cell-role="th">Conductivity</th>
-<th data-quarto-table-cell-role="th">Density</th>
-<th data-quarto-table-cell-role="th">SpecHeat</th>
-<th data-quarto-table-cell-role="th">Thickness</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>CDA15cma0p7</td>
-<td>2.0</td>
-<td>2500.0</td>
-<td>1400.0</td>
-<td>0.15</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre>
-
-
-
-
-
-
-
-
-Construction system:<span class="ansi-bold">LADRILLO14CMA0P7</span>
-
-Total thickness    :0.14 m
-
-Total layers:[1]
-
-InsideAbsorpVis:[0.7]
-
-OutsideAbsorpVis:[0.7]
-
-OutsideAbsorpSolar:[0.7]
-
-InsideAbsorpThermal:[0.9]
-
-OutsideRoughness:[2]
-</pre>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">NameMaterial</th>
-<th data-quarto-table-cell-role="th">Conductivity</th>
-<th data-quarto-table-cell-role="th">Density</th>
-<th data-quarto-table-cell-role="th">SpecHeat</th>
-<th data-quarto-table-cell-role="th">Thickness</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Ladrillo14cma0p7</td>
-<td>1.4</td>
-<td>1400.0</td>
-<td>1000.0</td>
-<td>0.14</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-
-
-</code></pre>
-</div>
-</div>
-<div id="fe73c40d-343e-4ea6-80a7-237c7aab93ca" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>),sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> parse(<span class="st">"2006-03-13"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> f1 <span class="op">+</span> pd.Timedelta(<span class="st">"7D3h50min"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(data_cubo.Ti_CUBO,label<span class="op">=</span><span class="st">"Ti"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(data_cubo.To,label<span class="op">=</span><span class="st">"To"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(data_cubo.Id,label<span class="op">=</span><span class="st">"Id"</span>) </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(data_cubo.Ib,label<span class="op">=</span><span class="st">"Ib"</span>) </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(data_cubo[<span class="st">"TECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)"</span>],label<span class="op">=</span><span class="st">"Ig"</span>) </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend()</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].legend()</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlim(f1,f2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="001_EDA_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<p>52560 rows × 10 columns</p>
 </div>
 </div>
 </div>
@@ -977,13 +903,13 @@ OutsideRoughness:[2]
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../clases/005-obteniendo-datos-python/index.html" class="pagination-link" aria-label="Analizando datos de una simulación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analizando datos de una simulación</span></span>
+      <a href="../../clases/007_008_2Zonas_VentanasProtecciones/index.html" class="pagination-link" aria-label="Caso base y aleros">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Caso base y aleros</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../clases/005-obteniendo-datos-python/002_EDA_EPW.html" class="pagination-link" aria-label="Usando read_epw para leer EPWs">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Usando read_epw para leer EPWs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../clases/007_008_2Zonas_VentanasProtecciones/002_Comparacion_ConSinVentanas.html" class="pagination-link" aria-label="002_Comparacion_ConSinVentanas.html">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">002_Comparacion_ConSinVentanas.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

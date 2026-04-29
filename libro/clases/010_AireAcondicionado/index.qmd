@@ -1,0 +1,10 @@
+# Simulación con dos zonas térmicas, ventanas y protecciones
+
+
+## Video de la sesión
+
+{{< video https://youtu.be/KbqNvZLhi8A >}}
+
+## Notas
+
+Se hace una simulación para aprender a colocar setpoints de aire acondicionado de enfriamiento y calentamiento.

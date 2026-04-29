@@ -172,5 +172,148 @@
       "Sesiones",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Simulación con dos zonas térmicas, ventanas y protecciones</span>"
     ]
+  },
+  {
+    "objectID": "clases/007_008_2Zonas_VentanasProtecciones/index.html",
+    "href": "clases/007_008_2Zonas_VentanasProtecciones/index.html",
+    "title": "9  Caso base y aleros",
+    "section": "",
+    "text": "9.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Caso base y aleros</span>"
+    ]
+  },
+  {
+    "objectID": "clases/007_008_2Zonas_VentanasProtecciones/index.html#notas",
+    "href": "clases/007_008_2Zonas_VentanasProtecciones/index.html#notas",
+    "title": "9  Caso base y aleros",
+    "section": "9.2 Notas",
+    "text": "9.2 Notas\nSe crea un caso base y se ponen aleros en otro para analizar las diferencias.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Caso base y aleros</span>"
+    ]
+  },
+  {
+    "objectID": "clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html",
+    "href": "clases/007_008_2Zonas_VentanasProtecciones/001_EDA.html",
+    "title": "Taller Introducción al Diseño Bioclimático",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom iertools.read import read_sql\nfrom dateutil.parser import parse\n\n\nf = \"../osm/005_CBs/run/eplusout.sql\"\ndosz = read_sql(f,alias=True).data\n\n\nf1 = dosz.To.resample(\"D\").mean().idxmax()\n\n\nfig, ax = plt.subplots(figsize=(12,4))\nf1 = f1\nf2 = f1 + pd.Timedelta(\"7D\")\n\nax.plot(dosz.Ti_ESTE,label=\"Ti_este\")\nax.plot(dosz.Ti_OESTE,label=\"Ti_oeste\")\nax.plot(dosz.To,label=\"To\")\n\nax.set_xlim(f1,f2)\nax.legend()\n\n\n\n\n\n\n\n\n\ndosz\n\n\n\n\n\n\n\nvariable_name\nESTE:Zone Air Relative Humidity (%)\nESTE:Zone Air Temperature (C)\nTi_ESTE\nTo\nOESTE:Zone Air Relative Humidity (%)\nOESTE:Zone Air Temperature (C)\nTi_OESTE\nTECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)\nVNORTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)\nVOESTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)\n\n\ndate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2006-01-01 00:10:00\nNaN\nNaN\n24.692687\n17.566667\nNaN\nNaN\n25.746551\n0.0\n0.0\n0.0\n\n\n2006-01-01 00:20:00\nNaN\nNaN\n24.587666\n17.733333\nNaN\nNaN\n25.609811\n0.0\n0.0\n0.0\n\n\n2006-01-01 00:30:00\nNaN\nNaN\n24.484601\n17.900000\nNaN\nNaN\n25.474863\n0.0\n0.0\n0.0\n\n\n2006-01-01 00:40:00\nNaN\nNaN\n24.383016\n18.066667\nNaN\nNaN\n25.341520\n0.0\n0.0\n0.0\n\n\n2006-01-01 00:50:00\nNaN\nNaN\n24.282393\n18.233333\nNaN\nNaN\n25.209956\n0.0\n0.0\n0.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n2006-12-31 23:20:00\nNaN\nNaN\n26.946094\n19.833333\nNaN\nNaN\n28.404442\n0.0\n0.0\n0.0\n\n\n2006-12-31 23:30:00\nNaN\nNaN\n26.834170\n19.500000\nNaN\nNaN\n28.259459\n0.0\n0.0\n0.0\n\n\n2006-12-31 23:40:00\nNaN\nNaN\n26.724276\n19.166667\nNaN\nNaN\n28.116413\n0.0\n0.0\n0.0\n\n\n2006-12-31 23:50:00\nNaN\nNaN\n26.614856\n18.833333\nNaN\nNaN\n27.973797\n0.0\n0.0\n0.0\n\n\n2007-01-01 00:00:00\n28.997502\n26.7813\n26.505635\n20.036912\n26.70505\n28.189845\n27.831245\n0.0\n0.0\n0.0\n\n\n\n\n52560 rows × 10 columns",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>001_EDA.html</span>"
+    ]
+  },
+  {
+    "objectID": "clases/007_008_2Zonas_VentanasProtecciones/002_Comparacion_ConSinVentanas.html",
+    "href": "clases/007_008_2Zonas_VentanasProtecciones/002_Comparacion_ConSinVentanas.html",
+    "title": "Taller Introducción al Diseño Bioclimático",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom iertools.read import read_sql\nfrom dateutil.parser import parse\n\n\ndef carga_datos(f):\n    \n    sinv = read_sql(f,alias=True).data\n    nombres = {\n        'TECHO:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)': 'Is_TECHO',\n        'VNORTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)': 'Is_VNORTE',\n        'VOESTE:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)': 'Is_VOESTE'\n    }\n    sinv.rename(columns=nombres,inplace=True)\n    return sinv\n\n\nf = \"../osm/005_CBs/run/eplusout.sql\"\nsinv = carga_datos(f)\n\nf = \"../osm/006_Protecciones/run/eplusout.sql\"\nconv = carga_datos(f)\n\ncolumnas = conv.columns\ncolumnas\n\nIndex(['ESTE:Zone Air Relative Humidity (%)', 'ESTE:Zone Air Temperature (C)',\n       'Ti_ESTE', 'To',\n       'FACE 13:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 15:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 16:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 18:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 19:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 1:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 20:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 21:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 22:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 23:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 2:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 3:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 4:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 6:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'FACE 8:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 18:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 19:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 20:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 22:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 23:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Mir-FACE 8:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'OESTE:Zone Air Relative Humidity (%)',\n       'OESTE:Zone Air Temperature (C)', 'Ti_OESTE',\n       'SURFACE 1:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)',\n       'Is_TECHO', 'Is_VNORTE',\n       'VNORTE:Surface Outside Face Sunlit Fraction ()', 'Is_VOESTE'],\n      dtype='str', name='variable_name')\n\n\n\nIss = [columna for columna in columnas if \"Is_\" in columna]\nTis = [columna for columna in columnas if \"Ti_\" in columna]\nIss, Tis\n\n(['Is_TECHO', 'Is_VNORTE', 'Is_VOESTE'], ['Ti_ESTE', 'Ti_OESTE'])\n\n\n\nfig, ax = plt.subplots(figsize=(12,4),sharex=True)\nf1 = parse(\"2006-08-27\")\nf2 = f1 + pd.Timedelta(\"1D\")\n\n\n\nax.plot(sinv['FACE 6:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)'],\"g-\",label=\"Is_PNORTE_sv\")\nax.plot(conv['FACE 6:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)'],\"go\",label=\"Is_PNORTE_cv\")\n\n\n\n\nax.set_xlim(f1,f2)\nax.legend()\nax.legend()\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(2,1,figsize=(12,4),sharex=True)\nf1 = parse(\"2006-08-27\")\nf2 = f1 + pd.Timedelta(\"1D\")\n\n\n\nax[0].plot(sinv['FACE 6:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)'],\"g-\",label=\"Is_PNORTE_sv\")\nax[0].plot(conv['FACE 6:Surface Outside Face Incident Solar Radiation Rate per Area (W/m2)'],\"go\",label=\"Is_PNORTE_cv\")\n\nax[1].plot(conv['VNORTE:Surface Outside Face Sunlit Fraction ()'],label=\"fraccion sombreamiento\")\n\n\nax[0].set_xlim(f1,f2)\nax[0].legend()",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>002_Comparacion_ConSinVentanas.html</span>"
+    ]
+  },
+  {
+    "objectID": "clases/009_AnalisisShading/index.html",
+    "href": "clases/009_AnalisisShading/index.html",
+    "title": "12  Análisis de sombreamiento en ventanas",
+    "section": "",
+    "text": "12.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
+  },
+  {
+    "objectID": "clases/009_AnalisisShading/index.html#notas",
+    "href": "clases/009_AnalisisShading/index.html#notas",
+    "title": "12  Análisis de sombreamiento en ventanas",
+    "section": "12.2 Notas",
+    "text": "12.2 Notas\nSe descubre que el sombreamiento no se proyecta en ventanas pero si la fracción de sombreamiento.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
+  },
+  {
+    "objectID": "clases/010_AireAcondicionado/index.html",
+    "href": "clases/010_AireAcondicionado/index.html",
+    "title": "13  Simulación con dos zonas térmicas, ventanas y protecciones",
+    "section": "",
+    "text": "13.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Simulación con dos zonas térmicas, ventanas y protecciones</span>"
+    ]
+  },
+  {
+    "objectID": "clases/010_AireAcondicionado/index.html#notas",
+    "href": "clases/010_AireAcondicionado/index.html#notas",
+    "title": "13  Simulación con dos zonas térmicas, ventanas y protecciones",
+    "section": "13.2 Notas",
+    "text": "13.2 Notas\nSe hace una simulación para aprender a colocar setpoints de aire acondicionado de enfriamiento y calentamiento.",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Simulación con dos zonas térmicas, ventanas y protecciones</span>"
+    ]
+  },
+  {
+    "objectID": "clases/010_AireAcondicionado/003_revision_1setpoint.html",
+    "href": "clases/010_AireAcondicionado/003_revision_1setpoint.html",
+    "title": "Taller Introducción al Diseño Bioclimático",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom iertools.read import read_sql\nfrom dateutil.parser import parse\n\n\nf = \"../osm/007_CB_aa/run/eplusout.sql\"\naa = read_sql(f,alias=True).data\naa = aa[aa.index.year==2006]\naa\n\n\n\n\n\n\n\nvariable_name\nESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\nESTE:Zone Air Relative Humidity (%)\nESTE:Zone Air Temperature (C)\nTi_ESTE\nTo\nOESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\nOESTE:Zone Air Relative Humidity (%)\nOESTE:Zone Air Temperature (C)\nTi_OESTE\n\n\ndate\n\n\n\n\n\n\n\n\n\n\n\n\n\n2006-01-01 00:10:00\n0.000000\nNaN\nNaN\n24.034925\nNaN\n277224.068605\nNaN\nNaN\n20.0\n\n\n2006-01-01 00:20:00\n0.000000\nNaN\nNaN\n23.930461\nNaN\n263971.286707\nNaN\nNaN\n20.0\n\n\n2006-01-01 00:30:00\n0.000000\nNaN\nNaN\n23.827980\nNaN\n251053.777571\nNaN\nNaN\n20.0\n\n\n2006-01-01 00:40:00\n0.000000\nNaN\nNaN\n23.727139\nNaN\n238517.773899\nNaN\nNaN\n20.0\n\n\n2006-01-01 00:50:00\n0.000000\nNaN\nNaN\n23.627973\nNaN\n226365.196577\nNaN\nNaN\n20.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n2006-12-31 23:10:00\n59574.351221\nNaN\nNaN\n25.000000\nNaN\n494338.388815\nNaN\nNaN\n20.0\n\n\n2006-12-31 23:20:00\n51407.253331\nNaN\nNaN\n25.000000\nNaN\n478541.926915\nNaN\nNaN\n20.0\n\n\n2006-12-31 23:30:00\n43335.987196\nNaN\nNaN\n25.000000\nNaN\n462901.793326\nNaN\nNaN\n20.0\n\n\n2006-12-31 23:40:00\n35369.236852\nNaN\nNaN\n25.000000\nNaN\n447407.541928\nNaN\nNaN\n20.0\n\n\n2006-12-31 23:50:00\n27522.971685\nNaN\nNaN\n25.000000\nNaN\n432048.344807\nNaN\nNaN\n20.0\n\n\n\n\n52559 rows × 9 columns\n\n\n\n\nfig, ax = plt.subplots(figsize=(12,3))\n\nax.plot(aa.Ti_ESTE,\"r.\",label=\"este\")\nax.plot(aa.Ti_OESTE,\"k--\",label=\"oeste\")\n\nax.set_ylim(15,30)\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\n\nfig, (ax,ax2) = plt.subplots(2,1,figsize=(12,3),sharex=True)\n\nf1 = parse(\"2006-04-17\")\nf2 = f1 + pd.Timedelta(\"3D\")\n\nax.plot(aa.Ti_ESTE,\"r.\",label=\"este\")\n\n\nax2.plot(aa[\"ESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\"])\n\nax.set_ylim(15,30)\nax.set_xlim(f1,f2)\nax.grid()\nax.legend()\n\n\n\n\n\n\n\n\n\nzona = \"ESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\"\n\nfig, ax = plt.subplots(figsize=(12,3) )\n\nax.bar(\n    range(13),\n    aa[zona].resample(\"ME\").sum()\n)\n\n\n\n\n\n\n\n\n\naa.columns\n\nIndex(['ESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)',\n       'ESTE:Zone Air Relative Humidity (%)', 'ESTE:Zone Air Temperature (C)',\n       'Ti_ESTE', 'To',\n       'OESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)',\n       'OESTE:Zone Air Relative Humidity (%)',\n       'OESTE:Zone Air Temperature (C)', 'Ti_OESTE'],\n      dtype='str', name='variable_name')\n\n\n\naa[[este,oeste]].resample(\"YE\").sum().values\n\narray([[5.78833154e+09, 2.30698337e+10]])\n\n\n\neste = \"ESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\"\noeste = \"OESTE IDEAL LOADS AIR SYSTEM:Zone Ideal Loads Zone Total Cooling Energy (J)\"\n\nfig, ax = plt.subplots(figsize=(12,3) )\n\nax.bar(\n    [1,2],\n    aa[[este,oeste]].resample(\"YE\").sum().values.flatten()\n)",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>003_revision_1setpoint.html</span>"
+    ]
+  },
+  {
+    "objectID": "clases/011_EnerHabitat_P1/index.html",
+    "href": "clases/011_EnerHabitat_P1/index.html",
+    "title": "15  Análisis de sombreamiento en ventanas",
+    "section": "",
+    "text": "15.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
+  },
+  {
+    "objectID": "clases/011_EnerHabitat_P1/index.html#notas",
+    "href": "clases/011_EnerHabitat_P1/index.html#notas",
+    "title": "15  Análisis de sombreamiento en ventanas",
+    "section": "15.2 Notas",
+    "text": "15.2 Notas\nIntroduccón a EnerHabitat, webapp y paquete",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
+  },
+  {
+    "objectID": "clases/012_EnerHabitat_P2/index.html",
+    "href": "clases/012_EnerHabitat_P2/index.html",
+    "title": "16  Análisis de sombreamiento en ventanas",
+    "section": "",
+    "text": "16.1 Video de la sesión",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
+  },
+  {
+    "objectID": "clases/012_EnerHabitat_P2/index.html#notas",
+    "href": "clases/012_EnerHabitat_P2/index.html#notas",
+    "title": "16  Análisis de sombreamiento en ventanas",
+    "section": "16.2 Notas",
+    "text": "16.2 Notas\nEnerHabitat, paquete de python en PyPi",
+    "crumbs": [
+      "Sesiones",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Análisis de sombreamiento en ventanas</span>"
+    ]
   }
 ]

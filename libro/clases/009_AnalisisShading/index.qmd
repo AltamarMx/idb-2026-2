@@ -1,0 +1,10 @@
+# Análisis de sombreamiento en ventanas
+
+
+## Video de la sesión
+
+{{< video https://youtu.be/losF7VZpkhw >}}
+
+## Notas
+
+Se descubre que el sombreamiento no se proyecta en ventanas pero si la fracción de sombreamiento.

@@ -1,0 +1,9 @@
+# Caso base y aleros
+
+## Video de la sesión
+
+{{< video https://youtu.be/V91HHkT586k >}}
+
+## Notas
+
+Se crea un caso base y se ponen aleros en otro para analizar las diferencias.

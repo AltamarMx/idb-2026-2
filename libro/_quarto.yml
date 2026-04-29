@@ -18,6 +18,14 @@ book:
         - clases/005-obteniendo-datos-python/001_EDA.ipynb 
         - clases/005-obteniendo-datos-python/002_EDA_EPW.ipynb 
         - clases/006_2Zonas_VentanasProtecciones/index.qmd
+        - clases/007_008_2Zonas_VentanasProtecciones/index.qmd
+        - clases/007_008_2Zonas_VentanasProtecciones/001_EDA.ipynb
+        - clases/007_008_2Zonas_VentanasProtecciones/002_Comparacion_ConSinVentanas.ipynb
+        - clases/009_AnalisisShading/index.qmd
+        - clases/010_AireAcondicionado/index.qmd
+        - clases/010_AireAcondicionado/003_revision_1setpoint.ipynb
+        - clases/011_EnerHabitat_P1/index.qmd
+        - clases/012_EnerHabitat_P2/index.qmd
     - references.qmd
 
 bibliography: references.bib

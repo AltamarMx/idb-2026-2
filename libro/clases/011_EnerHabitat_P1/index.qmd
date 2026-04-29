@@ -1,0 +1,10 @@
+# Análisis de sombreamiento en ventanas
+
+
+## Video de la sesión
+
+{{< video https://youtu.be/4E1SqiVWSyI >}}
+
+## Notas
+
+Introduccón a EnerHabitat, webapp y paquete
